@@ -1,0 +1,174 @@
+.alumni-grid-container {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  height: calc(100vh - 250px);
+  /* Adjust based on header/controls height */
+  min-height: 600px;
+  width: 100%;
+  position: relative;
+}
+
+.alumni-grid {
+  height: 100%;
+  width: 100%;
+}
+
+/* Override ag-Grid theme colors */
+.alumni-grid.ag-theme-quartz {
+  --ag-background-color: rgba(0, 0, 0, 0.8);
+  --ag-header-background-color: rgba(0, 0, 0, 0.9);
+  --ag-odd-row-background-color: rgba(255, 255, 255, 0.02);
+  --ag-row-hover-color: rgba(0, 255, 136, 0.08);
+  --ag-selected-row-background-color: rgba(0, 255, 136, 0.15);
+  --ag-header-foreground-color: #ffffff;
+  --ag-foreground-color: #ffffff;
+  --ag-border-color: rgba(255, 255, 255, 0.2);
+  --ag-secondary-border-color: rgba(255, 255, 255, 0.1);
+
+  /* Font styling */
+  font-size: 14px;
+  font-family: inherit;
+
+  /* Grid lines */
+  --ag-row-border-color: rgba(255, 255, 255, 0.1);
+  --ag-cell-horizontal-border: rgba(255, 255, 255, 0.05);
+
+  /* Scrollbar styling */
+  --ag-scrollbar-background-color: rgba(255, 255, 255, 0.1);
+  --ag-scrollbar-thumb-color: rgba(0, 255, 136, 0.3);
+}
+
+.alumni-grid .ag-header {
+  border-bottom: 2px solid rgba(0, 255, 136, 0.3);
+}
+
+.alumni-grid .ag-header-cell {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+}
+
+.alumni-grid .ag-row {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.alumni-grid .ag-row:hover {
+  transform: translateY(-1px);
+}
+
+.alumni-grid .ag-cell {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.name-cell .name {
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+
+.linkedin-link {
+  color: #00ff88;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-size: 0.75rem;
+  text-transform: lowercase;
+}
+
+.linkedin-link:hover {
+  background: rgba(0, 255, 136, 0.1);
+  border-color: #00ff88;
+}
+
+/* Ensure proper row styling */
+.alumni-grid .ag-row {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.alumni-grid .ag-row:hover {
+  background: rgba(0, 255, 136, 0.05) !important;
+}
+
+.alumni-grid .ag-cell {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+
+/* Custom styling for our components */
+.name-cell .name {
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+
+.linkedin-link {
+  color: #00ff88;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-size: 0.75rem;
+  text-transform: lowercase;
+}
+
+.linkedin-link:hover {
+  background: rgba(0, 255, 136, 0.1);
+  border-color: #00ff88;
+}
+
+/* Custom scrollbar styling */
+.alumni-grid .ag-body-viewport::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.alumni-grid .ag-body-viewport::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.alumni-grid .ag-body-viewport::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 136, 0.3);
+  border-radius: 4px;
+}
+
+.alumni-grid .ag-body-viewport::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 136, 0.5);
+}
+
+/* Loading overlay styling */
+.alumni-grid .ag-overlay-loading-center {
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  border-radius: 8px;
+  color: #00ff88;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .alumni-grid-container {
+    height: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .alumni-grid-container {
+    margin: 0 -1rem;
+    border-radius: 0;
+    height: 450px;
+  }
+}
